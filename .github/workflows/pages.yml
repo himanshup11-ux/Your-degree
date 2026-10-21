@@ -34,7 +34,7 @@ jobs:
       - name: Publish to gh-pages
         run: |
           mkdir _site
-          cp -r index.html styles.css main.js assets _site/
+          cp -r index.html 404.html styles.css main.js assets _site/
           touch _site/.nojekyll
           cd _site
           git init -q -b gh-pages
