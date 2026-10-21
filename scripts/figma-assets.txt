@@ -60,5 +60,5 @@ video-ml.png 13f69425-4c21-43a2-a3ec-b69a6c144726.png
 video-infosys.png 92ce70e1-2f3a-4789-89a8-961bd36ae714.png
 logo-yourdegree-light.svg de1b7ed9-72df-49f1-89ea-f1d3f969fe09.svg
 faq-arrow-down.svg 5d05b9fc-2393-4db1-aa28-481631ce1eb1.svg
-uni-icon-dypatil.png 24af7597-bd82-47a1-b76f-f213c4bb03f1.png
+uni-icon-dypatil.png 2fd9e2c2-9ac6-47f9-b3d8-92651c023c11
 uni-learn-arrow.svg 6cbf5b6d-4e63-47bd-80ca-f30ad1a51fed.svg
