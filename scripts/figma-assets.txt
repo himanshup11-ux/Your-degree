@@ -57,6 +57,6 @@ video-iit.png c7f8e161-326e-488b-83bc-4331c9cddac9.png
 video-publisher-logo.png 1a2a1ca5-7162-42a4-a2de-34e837d7778f.png
 video-upi.png cf1f5316-30d2-40c9-afc5-6c7ef79cc707.png
 video-ml.png 13f69425-4c21-43a2-a3ec-b69a6c144726.png
-video-infosys.png c342adcb-1bd1-4f6d-850e-6dac7348a46e.png
+video-infosys.png 92ce70e1-2f3a-4789-89a8-961bd36ae714.png
 logo-yourdegree-light.svg de1b7ed9-72df-49f1-89ea-f1d3f969fe09.svg
 faq-arrow-down.svg 5d05b9fc-2393-4db1-aa28-481631ce1eb1.svg
