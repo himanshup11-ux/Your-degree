@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YourDegree | Find the right online degree</title>
+  <meta name="description" content="Discover, compare and apply to UGC-entitled online degree programs from India's top universities, with free career counselling.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Main Navigation -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="/" aria-label="YourDegree home">
+        <img src="assets/logo-yourdegree.svg" width="88" height="52" alt="YourDegree">
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <a class="main-nav__link" href="#programs">
+          <img class="main-nav__art main-nav__art--placeholder" src="assets/nav-explore-programs.png" width="32" height="32" alt="">
+          <span>Explore Programs</span>
+          <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
+        </a>
+        <a class="main-nav__link" href="#universities">
+          <img class="main-nav__art" src="assets/nav-top-university.png" width="32" height="31" alt="">
+          <span>Top University</span>
+          <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
+        </a>
+        <a class="main-nav__link" href="#tools">
+          <span class="main-nav__art main-nav__art--tools"><img src="assets/nav-tools.png" alt=""></span>
+          <span>Tools</span>
+          <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
+        </a>
+        <a class="main-nav__link" href="#compare">
+          <img class="main-nav__art main-nav__art--contain" src="assets/nav-compare-programs.png" width="32" height="31" alt="">
+          <span>Compare Programs</span>
+          <span class="badge-new">New</span>
+        </a>
+      </nav>
+
+      <div class="account-pill">
+        <span class="account-pill__avatar"><img src="assets/avatar-account.png" width="48" height="48" alt="Your account"></span>
+        <button class="account-pill__menu" type="button" aria-label="Open menu">
+          <img src="assets/icon-menu.svg" width="24" height="24" alt="">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero / Degree Search -->
+    <section class="hero-search">
+      <h1 class="display-lg hero-search__title">Find the right <span class="text-accent">online degree</span> for your career goals</h1>
+
+      <form class="search-pill" role="search" action="#programs">
+        <label class="search-pill__segment search-pill__segment--first">
+          <span class="search-pill__label">Degree</span>
+          <input class="search-pill__input" type="text" name="degree" list="degree-options" placeholder="MBA, BCA, B.Com…" autocomplete="off">
+        </label>
+        <span class="search-pill__divider" aria-hidden="true"></span>
+        <label class="search-pill__segment">
+          <span class="search-pill__label">University</span>
+          <input class="search-pill__input" type="text" name="university" list="university-options" placeholder="Choose a University" autocomplete="off">
+        </label>
+        <span class="search-pill__divider" aria-hidden="true"></span>
+        <label class="search-pill__segment">
+          <span class="search-pill__label">Specialisation</span>
+          <input class="search-pill__input" type="text" name="specialisation" placeholder="Choose a specialisation" autocomplete="off">
+        </label>
+        <button class="search-pill__orb" type="submit" aria-label="Search degrees">
+          <img src="assets/icon-search.svg" width="20" height="20" alt="">
+        </button>
+
+        <datalist id="degree-options">
+          <option value="MBA"><option value="MA"><option value="MCA"><option value="M.Com">
+          <option value="M.Sc"><option value="MLIS"><option value="MSW"><option value="PGDCA">
+        </datalist>
+        <datalist id="university-options">
+          <option value="D Y Patil University"><option value="Chandigarh University"><option value="O.P. Jindal Global University">
+        </datalist>
+      </form>
+    </section>
+
+    <!-- Hero / Promotional Carousel -->
+    <section class="promo" aria-roledescription="carousel" aria-label="Promotions">
+      <div class="promo__banner">
+        <img src="assets/hero-banner.png" alt="Only UGC-accredited online courses. Recognised degrees. Real opportunities. A smarter way to build your future.">
+      </div>
+      <div class="carousel-controls" data-carousel-controls data-pages="4">
+        <button class="carousel-controls__arrow" type="button" data-carousel-prev aria-label="Previous slide">
+          <img src="assets/carousel-arrow-left.svg" width="20" height="20" alt="">
+        </button>
+        <div class="pagination" data-pagination></div>
+        <button class="carousel-controls__arrow" type="button" data-carousel-next aria-label="Next slide">
+          <img src="assets/carousel-arrow-right.svg" width="20" height="20" alt="">
+        </button>
+      </div>
+    </section>
+
+    <!-- Trust / Accreditation Highlights -->
+    <section class="highlights" aria-label="Why YourDegree">
+      <div class="highlights__item">
+        <p class="display-lg">UGC-entitled</p>
+        <p class="highlights__caption">programs only</p>
+      </div>
+      <div class="highlights__item">
+        <p class="display-lg">NAAC A+</p>
+        <p class="highlights__caption">above universities</p>
+      </div>
+      <div class="highlights__item">
+        <p class="display-lg">1 Lac +</p>
+        <p class="highlights__caption">students counselled</p>
+      </div>
+      <div class="highlights__item">
+        <p class="display-lg">Verified &amp; secure</p>
+        <p class="highlights__caption">admissions</p>
+      </div>
+    </section>
+
+    <!-- Counselling / Featured Mentor -->
+    <section class="mentor">
+      <div class="mentor__copy">
+        <img class="mentor__quote-mark" src="assets/quote-mark.png" width="60" height="60" alt="">
+        <div class="mentor__intro">
+          <h2 class="display-lg mentor__title">
+            Great careers start with a conversation, <br>
+            maybe with <span class="mentor__name-inline">Ananya Rao</span>. <br>
+            <a class="mentor__connect" href="#book-session">Connect Now</a>
+          </h2>
+          <p class="body-sm text-muted">Book Free career counselling by Trusted Counsellers</p>
+        </div>
+        <blockquote class="mentor__testimonial">
+          I came in confused about AI vs data science. <br>
+          I left with a plan I actually understood. Thank you ananya
+        </blockquote>
+      </div>
+
+      <div class="mentor__profile">
+        <div class="portraits" aria-hidden="true">
+          <img class="portraits__item portraits__item--1" src="assets/counsellor-1.png" width="118" height="118" alt="">
+          <img class="portraits__item portraits__item--2" src="assets/counsellor-2.png" width="128" height="128" alt="">
+          <img class="portraits__item portraits__item--3" src="assets/counsellor-3.png" width="118" height="118" alt="">
+          <img class="portraits__item portraits__item--4" src="assets/counsellor-4.png" width="128" height="128" alt="">
+          <img class="portraits__item portraits__item--5" src="assets/counsellor-5.png" width="196" height="196" alt="">
+        </div>
+        <div class="mentor__switcher">
+          <button class="icon-button" type="button" data-portrait-prev aria-label="Previous counsellor">
+            <img src="assets/mentor-arrow-left.svg" width="24" height="24" alt="">
+          </button>
+          <p class="display-md mentor__name">Ananya Rao</p>
+          <button class="icon-button" type="button" data-portrait-next aria-label="Next counsellor">
+            <img src="assets/mentor-arrow-right.svg" width="24" height="24" alt="">
+          </button>
+        </div>
+        <div class="mentor__stats">
+          <div class="stat">
+            <p class="display-sm">10 Years</p>
+            <p class="body-sm text-muted">Mentoring</p>
+          </div>
+          <span class="mentor__stats-divider" aria-hidden="true"></span>
+          <div class="stat">
+            <p class="display-sm">4500+</p>
+            <p class="body-sm text-muted">learners guided</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools / Admission Support -->
+    <section class="tools section--soft" id="tools">
+      <h2 class="display-xl section-title">Tools, guidance and support, <br>all in one place.</h2>
+
+      <div class="tools__content">
+        <div class="tabs" role="tablist" aria-label="Admission stage">
+          <button class="tabs__tab is-active" type="button" role="tab" aria-selected="true">Pre-admission Tools</button>
+          <button class="tabs__tab" type="button" role="tab" aria-selected="false">Post-admission Tools</button>
+        </div>
+
+        <div class="tools__grid">
+          <a class="tool-card" href="#compare">
+            <img class="tool-card__art" src="assets/tool-compare-universities.png" width="60" height="60" alt="">
+            <span class="display-sm tool-card__title">Compare Universities</span>
+            <img class="tool-card__arrow" src="assets/tool-arrow.svg" width="24" height="24" alt="">
+          </a>
+          <a class="tool-card" href="#tools">
+            <img class="tool-card__art" src="assets/tool-compare-universities.png" width="60" height="60" alt="">
+            <span class="display-sm tool-card__title">Fee &amp; EMI Calculator</span>
+            <img class="tool-card__arrow" src="assets/tool-arrow.svg" width="24" height="24" alt="">
+          </a>
+          <a class="tool-card" href="#tools">
+            <img class="tool-card__art" src="assets/tool-compare-universities.png" width="60" height="60" alt="">
+            <span class="display-sm tool-card__title">Eligibility Checker</span>
+            <img class="tool-card__arrow" src="assets/tool-arrow.svg" width="24" height="24" alt="">
+          </a>
+          <a class="tool-card" href="#tools">
+            <img class="tool-card__art" src="assets/tool-compare-universities.png" width="60" height="60" alt="">
+            <span class="display-sm tool-card__title">Scholarship Finder</span>
+            <img class="tool-card__arrow" src="assets/tool-arrow.svg" width="24" height="24" alt="">
+          </a>
+          <a class="tool-card" href="#book-session">
+            <img class="tool-card__art" src="assets/tool-compare-universities.png" width="60" height="60" alt="">
+            <span class="display-sm tool-card__title">Free Counselling Call</span>
+            <img class="tool-card__arrow" src="assets/tool-arrow.svg" width="24" height="24" alt="">
+          </a>
+          <a class="tool-card" href="#tools">
+            <img class="tool-card__art" src="assets/tool-compare-universities.png" width="60" height="60" alt="">
+            <span class="display-sm tool-card__title">Document Checklist</span>
+            <img class="tool-card__arrow" src="assets/tool-arrow.svg" width="24" height="24" alt="">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Counselling / Why Choose Us -->
+    <section class="why">
+      <div class="section-heading">
+        <h2 class="display-xl">Why students trust our counsellors</h2>
+        <p class="title-md text-muted">Free, unbiased guidance before you commit to a program or university.</p>
+      </div>
+
+      <div class="why__grid">
+        <div class="why__item">
+          <span class="icon-tile"><img src="assets/icon-medal-star.svg" width="40" height="40" alt=""></span>
+          <h3 class="display-md">Certified counsellors</h3>
+          <p class="body-md">Trained specifically on UGC-entitled online degree norms, not generic career advice.</p>
+        </div>
+        <div class="why__item">
+          <span class="icon-tile"><img src="assets/icon-teacher.svg" width="40" height="40" alt=""></span>
+          <h3 class="display-md">1L+ students guided</h3>
+          <p class="body-md">Across MBA, MCA, MA and other programs since YourDegree started counselling.</p>
+        </div>
+        <div class="why__item">
+          <span class="icon-tile"><img src="assets/icon-moneys.svg" width="40" height="40" alt=""></span>
+          <h3 class="display-md">No hidden costs</h3>
+          <p class="body-md">Counselling calls are free. You pay the university directly, never YourDegree, for admission.</p>
+        </div>
+        <div class="why__item">
+          <span class="icon-tile"><img src="assets/icon-like-tag.svg" width="40" height="40" alt=""></span>
+          <h3 class="display-md">No pressure to decide</h3>
+          <p class="body-md">Compare as many programs as you want before choosing. No push toward a single university.</p>
+        </div>
+      </div>
+
+      <a class="button button--primary" href="#compare">
+        Compare Courses
+        <img src="assets/icon-arrow-right-white.svg" width="20" height="20" alt="">
+      </a>
+    </section>
+
+    <!-- CTA / Free Counselling Session -->
+    <section class="split-cta" id="book-session">
+      <div class="split-cta__copy">
+        <div class="split-cta__text">
+          <h2 class="display-xl split-cta__title">Don't just pick a degree. <br>Pick the right future.</h2>
+          <p class="body-md">Speak to a YourDegree-certified counsellor and get insights <br>from 1 lakh+ learners before you choose a program or a university.</p>
+        </div>
+        <a class="button button--primary" href="#book-session">
+          Book a Free Session
+          <img src="assets/icon-arrow-right-white.svg" width="20" height="20" alt="">
+        </a>
+      </div>
+      <div class="split-cta__media" role="img" aria-label="Counselling image placeholder"></div>
+    </section>
+
+    <!-- Programs / Explore Degrees -->
+    <section class="programs" id="programs">
+      <h2 class="display-xl section-title">Pick a degree. We’ll show you <br>who offers it.</h2>
+
+      <div class="tabs tabs--bordered" role="tablist" aria-label="Degree level">
+        <button class="tabs__tab tabs__tab--icon is-active" type="button" role="tab" aria-selected="true">
+          <img class="tabs__icon tabs__icon--active" src="assets/icon-graduation-cap-active.svg" width="22" height="22" alt="">
+          <img class="tabs__icon tabs__icon--inactive" src="assets/icon-graduation-cap.svg" width="22" height="22" alt="">
+          Postgraduate
+        </button>
+        <button class="tabs__tab tabs__tab--icon" type="button" role="tab" aria-selected="false">
+          <img class="tabs__icon tabs__icon--active" src="assets/icon-graduation-cap-active.svg" width="22" height="22" alt="">
+          <img class="tabs__icon tabs__icon--inactive" src="assets/icon-graduation-cap.svg" width="22" height="22" alt="">
+          Undergraduate
+        </button>
+      </div>
+
+      <div class="programs__grid">
+        <article class="degree-card">
+          <img class="degree-card__art" src="assets/degree-mba.png" width="100" height="100" alt="">
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Master of Business Administration (MBA)</h3>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+        <article class="degree-card">
+          <img class="degree-card__art" src="assets/degree-ma.png" width="100" height="100" alt="">
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Master of Arts (MA)</h3>
+            <p class="degree-card__meta">42+ Specialisation</p>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+        <article class="degree-card">
+          <span class="degree-card__art degree-card__art--mca"><img src="assets/degree-mca.png" alt=""></span>
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Master of Computer Applications (MCA)</h3>
+            <p class="degree-card__meta">42+ Specialisation</p>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+        <article class="degree-card">
+          <img class="degree-card__art" src="assets/degree-mcom.png" width="100" height="100" alt="">
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Master of Commerce (M.com)</h3>
+            <p class="degree-card__meta">42+ Specialisation</p>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+        <article class="degree-card">
+          <img class="degree-card__art" src="assets/degree-mcom.png" width="100" height="100" alt="">
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Master of Science (M.Sc)</h3>
+            <p class="degree-card__meta">42+ Specialisation</p>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+        <article class="degree-card">
+          <img class="degree-card__art" src="assets/degree-mcom.png" width="100" height="100" alt="">
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Master of Library and Information Science (MLIS)</h3>
+            <p class="degree-card__meta">42+ Specialisation</p>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+        <article class="degree-card">
+          <img class="degree-card__art" src="assets/degree-mcom.png" width="100" height="100" alt="">
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Master of Social Work (MSW)</h3>
+            <p class="degree-card__meta">42+ Specialisation</p>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+        <article class="degree-card">
+          <img class="degree-card__art" src="assets/degree-mcom.png" width="100" height="100" alt="">
+          <div class="degree-card__copy">
+            <h3 class="display-sm">Post Graduate Diploma in Computer Applications (PGDCA)</h3>
+            <p class="degree-card__meta">42+ Specialisation</p>
+          </div>
+          <a class="link-accent" href="#programs">Explore Courses</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA / Meet Disha -->
+    <section class="split-cta split-cta--reverse" id="disha">
+      <div class="split-cta__media" role="img" aria-label="Disha image placeholder"></div>
+      <div class="split-cta__copy">
+        <div class="split-cta__text">
+          <h2 class="display-xl split-cta__title">Not sure where to start? Start with Disha.</h2>
+          <p class="body-md">Tell Disha what you enjoy, what you’re juggling and where you’d like to be one day. You’ll get honest suggestions, with no push toward any one university.</p>
+        </div>
+        <div class="split-cta__actions">
+          <a class="button button--primary" href="#disha">
+            Chat with Disha
+            <img src="assets/icon-arrow-right-white.svg" width="20" height="20" alt="">
+          </a>
+          <p class="body-sm split-cta__alt">Prefer a human? <a href="#book-session">Talk to a Career Mentor</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Universities / Featured Partners -->
+    <section class="universities" id="universities">
+      <div class="section-heading">
+        <h2 class="display-xl">Top universities on YourDegree</h2>
+        <p class="title-md text-muted">UGC-approved institutions offering online and distance degree programs.</p>
+      </div>
+
+      <div class="universities__carousel">
+        <div class="universities__track" data-carousel-track>
+          <article class="uni-card">
+            <div class="uni-card__media">
+              <img class="uni-card__photo" src="assets/uni-campus-dypatil.png" alt="D Y Patil University campus">
+              <span class="uni-card__badge">NAAC A++</span>
+            </div>
+            <div class="uni-card__body">
+              <span class="uni-card__logo"><img src="assets/uni-logo-dypatil.png" width="93" height="40" alt="D Y Patil University Online"></span>
+              <h3 class="display-sm">D Y Patil University</h3>
+              <p class="uni-card__location">Navi Mumbai · <span>Est.1993</span></p>
+              <p class="body-sm text-muted">2 Lac. Student Enrol · 19+ Specilisation</p>
+            </div>
+          </article>
+          <article class="uni-card">
+            <div class="uni-card__media">
+              <img class="uni-card__photo uni-card__photo--chandigarh" src="assets/uni-campus-chandigarh.png" alt="Chandigarh University campus">
+              <span class="uni-card__badge">NAAC A++</span>
+            </div>
+            <div class="uni-card__body">
+              <span class="uni-card__logo"><img src="assets/uni-logo-chandigarh.png" width="185" height="40" alt="CU Online"></span>
+              <h3 class="display-sm">Chandigarh University</h3>
+              <p class="uni-card__location">Navi Mumbai · <span>Est.1993</span></p>
+              <p class="body-sm text-muted">2 Lac. Student Enrol · 19+ Specilisation</p>
+            </div>
+          </article>
+          <article class="uni-card">
+            <div class="uni-card__media">
+              <img class="uni-card__photo uni-card__photo--jindal" src="assets/uni-campus-jindal.png" alt="O.P. Jindal Global University campus">
+              <span class="uni-card__badge">NAAC A++</span>
+            </div>
+            <div class="uni-card__body">
+              <span class="uni-card__logo"><img src="assets/uni-logo-jindal.png" width="112" height="40" alt="O.P. Jindal Global University"></span>
+              <h3 class="display-sm">O.P. Jindal Global University</h3>
+              <p class="uni-card__location">Navi Mumbai · <span>Est.1993</span></p>
+              <p class="body-sm text-muted">2 Lac. Student Enrol · 19+ Specilisation</p>
+            </div>
+          </article>
+        </div>
+        <div class="carousel-controls" data-carousel-controls data-pages="4">
+          <button class="carousel-controls__arrow" type="button" data-carousel-prev aria-label="Previous universities">
+            <img src="assets/carousel-arrow-left.svg" width="20" height="20" alt="">
+          </button>
+          <div class="pagination" data-pagination></div>
+          <button class="carousel-controls__arrow" type="button" data-carousel-next aria-label="Next universities">
+            <img src="assets/carousel-arrow-right.svg" width="20" height="20" alt="">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison / Online vs On-Campus -->
+    <section class="comparison section--soft" id="compare">
+      <h2 class="display-xl section-title">Study around your life, <br>not the other way round.</h2>
+
+      <div class="comparison__body">
+        <table class="comparison__table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Benefit</span></th>
+              <th scope="col">Online degree</th>
+              <th scope="col">On-campus degree</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><img src="assets/cmp-study-anywhere.svg" width="26" height="26" alt="">Study from anywhere</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-keep-job.svg" width="26" height="26" alt="">Keep your job while you study</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-study-time.svg" width="26" height="26" alt="">Pick your own study time</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-no-relocation.svg" width="26" height="26" alt="">No relocation or hostel costs</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-no-commute.svg" width="26" height="26" alt="">No daily commute</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-replay.svg" width="26" height="26" alt="">Replay lectures when you need to</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-lower-cost.svg" width="26" height="26" alt="">Lower overall cost</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-meet-people.svg" width="26" height="26" alt="">Meet people from across the country</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--no"><img src="assets/status-cross.png" alt="No"></span></td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="assets/cmp-recognised.svg" width="26" height="26" alt="">Recognised degree*</th>
+              <td><span class="status status--yes"><img src="assets/status-check.png" alt="Yes"></span></td>
+              <td><span class="status status--yes status--offset"><img src="assets/status-check.png" alt="Yes"></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="comparison__footnote">*When the university is approved.</p>
+        <p class="display-sm comparison__cta">Still unsure? Disha can help you decide. <a href="#disha">Chat with Disha</a></p>
+      </div>
+    </section>
+
+    <!-- Testimonials / Student Stories -->
+    <section class="testimonials">
+      <h2 class="display-xl section-title">What students say</h2>
+
+      <div class="testimonials__carousel">
+        <div class="testimonials__track" data-carousel-track>
+          <figure class="story">
+            <blockquote class="story__quote">
+              <img class="story__quote-icon" src="assets/testimonial-quote.png" width="40" height="40" alt="">
+              <p>My counsellor compared three MBA programs against my budget and NAAC rating in one call. Saved me weeks of research.</p>
+              <img class="story__uni" src="assets/testimonial-logo-cu.png" width="138" height="30" alt="CU Online">
+            </blockquote>
+            <figcaption class="story__person">
+              <img class="story__photo" src="assets/testimonial-student.png" alt="">
+              <span class="story__name">Rhea M.</span>
+              <span class="story__course">Online MBA, Business Analytics</span>
+            </figcaption>
+          </figure>
+          <figure class="story">
+            <blockquote class="story__quote">
+              <img class="story__quote-icon" src="assets/testimonial-quote.png" width="40" height="40" alt="">
+              <p>I was working full time and needed something flexible. The MCA program I picked let me keep my job and finish on schedule.</p>
+              <img class="story__uni" src="assets/testimonial-logo-dypatil.png" width="93" height="40" alt="D Y Patil University Online">
+            </blockquote>
+            <figcaption class="story__person">
+              <img class="story__photo" src="assets/testimonial-student.png" alt="">
+              <span class="story__name">Aman K.</span>
+              <span class="story__course">Online MCA, Cloud Computing</span>
+            </figcaption>
+          </figure>
+          <figure class="story">
+            <blockquote class="story__quote">
+              <img class="story__quote-icon" src="assets/testimonial-quote.png" width="40" height="40" alt="">
+              <p>My counsellor compared three MBA programs against my budget and NAAC rating in one call. Saved me weeks of research.</p>
+              <img class="story__uni" src="assets/testimonial-logo-cu.png" width="138" height="30" alt="CU Online">
+            </blockquote>
+            <figcaption class="story__person">
+              <img class="story__photo" src="assets/testimonial-student.png" alt="">
+              <span class="story__name">Rhea M.</span>
+              <span class="story__course">Online MBA, Business Analytics</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls" data-carousel-controls data-pages="4">
+          <button class="carousel-controls__arrow" type="button" data-carousel-prev aria-label="Previous stories">
+            <img src="assets/carousel-arrow-left.svg" width="20" height="20" alt="">
+          </button>
+          <div class="pagination" data-pagination></div>
+          <button class="carousel-controls__arrow" type="button" data-carousel-next aria-label="Next stories">
+            <img src="assets/carousel-arrow-right.svg" width="20" height="20" alt="">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources / Videos -->
+    <section class="videos">
+      <h2 class="display-xl section-title">Press play. Get clear.</h2>
+
+      <div class="videos__layout">
+        <a class="video-feature" href="#">
+          <span class="video-feature__thumb"><img src="assets/video-iit.png" alt=""></span>
+          <span class="video-feature__meta">
+            <span class="video-feature__copy">
+              <span class="display-md video-feature__title">How IITs Are BEATING America’s Top Colleges! upGrad</span>
+              <span class="body-md text-muted">5M views&nbsp; | 1 month ago</span>
+            </span>
+            <img class="video-feature__publisher" src="assets/video-publisher-logo.png" width="40" height="40" alt="upGrad">
+          </span>
+        </a>
+
+        <div class="videos__list">
+          <a class="video-item" href="#">
+            <span class="video-item__thumb"><img src="assets/video-upi.png" alt=""></span>
+            <span class="video-item__info">
+              <span class="video-item__copy">
+                <span class="video-item__title">UPI is Musk’s Nightmare!! SOVEREIGNITY !! upGrad</span>
+                <span class="caption text-muted">5M views&nbsp; | 1 month ago</span>
+              </span>
+              <img class="video-item__publisher" src="assets/video-publisher-logo.png" width="30" height="30" alt="upGrad">
+            </span>
+          </a>
+          <a class="video-item" href="#">
+            <span class="video-item__thumb"><img src="assets/video-ml.png" alt=""></span>
+            <span class="video-item__info">
+              <span class="video-item__copy">
+                <span class="video-item__title video-item__title--clamp">How to Become a Machine Learning Engineer in 2026 (Complete Roadmap) | upGrad</span>
+                <span class="caption text-muted">5M views&nbsp; | 1 month ago</span>
+              </span>
+              <img class="video-item__publisher" src="assets/video-publisher-logo.png" width="30" height="30" alt="upGrad">
+            </span>
+          </a>
+          <a class="video-item" href="#">
+            <span class="video-item__thumb video-item__thumb--sm-radius"><img src="assets/video-infosys.png" alt=""></span>
+            <span class="video-item__info">
+              <span class="video-item__copy">
+                <span class="video-item__title">Why the Infosys Story Should Worry Every Indian Engineer? | upGrad</span>
+                <span class="caption text-muted">5M views&nbsp; | 1 month ago</span>
+              </span>
+              <img class="video-item__publisher" src="assets/video-publisher-logo.png" width="30" height="30" alt="upGrad">
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources / Articles -->
+    <section class="articles">
+      <h2 class="display-xl section-title">Fresh reads for curious minds</h2>
+
+      <div class="articles__grid">
+        <a class="article-card" href="#">
+          <span class="article-card__cover"><img src="assets/logo-yourdegree-light.svg" width="88" height="52" alt=""></span>
+          <span class="article-card__copy">
+            <span class="display-md article-card__title">Top Online MA Colleges in Delhi</span>
+            <time class="article-card__date" datetime="2026-06-08">June 08, 2026</time>
+          </span>
+        </a>
+        <a class="article-card" href="#">
+          <span class="article-card__cover"><img src="assets/logo-yourdegree-light.svg" width="88" height="52" alt=""></span>
+          <span class="article-card__copy">
+            <span class="display-md article-card__title">Top Online MA Colleges in Delhi</span>
+            <time class="article-card__date" datetime="2026-06-08">June 08, 2026</time>
+          </span>
+        </a>
+        <a class="article-card" href="#">
+          <span class="article-card__cover"><img src="assets/logo-yourdegree-light.svg" width="88" height="52" alt=""></span>
+          <span class="article-card__copy">
+            <span class="display-md article-card__title">Top Online MA Colleges in Delhi</span>
+            <time class="article-card__date" datetime="2026-06-08">June 08, 2026</time>
+          </span>
+        </a>
+        <a class="article-card" href="#">
+          <span class="article-card__cover"><img src="assets/logo-yourdegree-light.svg" width="88" height="52" alt=""></span>
+          <span class="article-card__copy">
+            <span class="display-md article-card__title">Top Online MA Colleges in Delhi</span>
+            <time class="article-card__date" datetime="2026-06-08">June 08, 2026</time>
+          </span>
+        </a>
+      </div>
+
+      <a class="button button--secondary" href="#">View all Blogs</a>
+    </section>
+
+    <!-- FAQ / Common Questions -->
+    <section class="faq section--soft">
+      <div class="faq__intro">
+        <h2 class="display-xl">Your questions, <br>answered</h2>
+        <p class="body-md">Can’t find what you’re looking for? <br>Visit our <a href="#">Help Centre</a>.</p>
+      </div>
+
+      <div class="faq__list" data-accordion>
+        <details class="faq__item" open>
+          <summary class="faq__question">
+            Are ATLAS Online programs UGC-recognized?
+            <img class="faq__chevron" src="assets/faq-arrow-down.svg" width="24" height="24" alt="">
+          </summary>
+          <p class="faq__answer body-md">YourDegree is an online platform that helps students discover, compare, and apply to online degree programs offered by recognized universities across India.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            How does YourDegree help students choose the right course?
+            <img class="faq__chevron" src="assets/faq-arrow-down.svg" width="24" height="24" alt="">
+          </summary>
+          <!-- Answer copy not yet provided in the design. -->
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Is YourDegree connected with recognized universities?
+            <img class="faq__chevron" src="assets/faq-arrow-down.svg" width="24" height="24" alt="">
+          </summary>
+          <!-- Answer copy not yet provided in the design. -->
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Does YourDegree charge students for counselling?
+            <img class="faq__chevron" src="assets/faq-arrow-down.svg" width="24" height="24" alt="">
+          </summary>
+          <!-- Answer copy not yet provided in the design. -->
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Are EMI options available for online degree programs ?
+            <img class="faq__chevron" src="assets/faq-arrow-down.svg" width="24" height="24" alt="">
+          </summary>
+          <!-- Answer copy not yet provided in the design. -->
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
