@@ -10,6 +10,10 @@ mkdir -p "$dest"
 failed=0
 while read -r name id; do
   [ -z "$name" ] && continue
+  if [ -s "$dest/$name" ]; then
+    echo "have $name"
+    continue
+  fi
   if curl -fsSL -o "$dest/$name" "https://www.figma.com/api/mcp/asset/$id"; then
     echo "ok   $name"
   else

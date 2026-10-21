@@ -1,0 +1,44 @@
+name: Publish site
+
+on:
+  push:
+    branches: [claude/friendly-shannon-u0un9l]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Figma assets
+        run: ./scripts/fetch-figma-assets.sh
+
+      # Keep the assets in the repo so later builds don't depend on Figma's expiring links.
+      - name: Commit downloaded assets
+        run: |
+          git add assets
+          if ! git diff --cached --quiet; then
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Add Figma assets"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Publish to gh-pages
+        run: |
+          mkdir _site
+          cp -r index.html styles.css main.js assets _site/
+          touch _site/.nojekyll
+          cd _site
+          git init -q -b gh-pages
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -qm "Publish ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
