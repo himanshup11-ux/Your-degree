@@ -1,16 +1,35 @@
-// YourDegree home page interactions: carousels, tabs, counsellor switcher, search.
+// YourDegree home page interactions: carousels, tabs, counsellor switcher, videos, search.
 (function () {
   "use strict";
 
-  // Carousel controls: "1/4" pill + dots. When the controls sit next to a
-  // scrollable track, the arrows also scroll it one card at a time.
+  // Carousels: a scrollable track plus "1/4" pill + dots. data-step="page"
+  // moves a full viewport of cards; otherwise one card per step.
   function initCarousel(controls) {
-    var pages = Number(controls.dataset.pages) || 1;
     var pagination = controls.querySelector("[data-pagination]");
     var prev = controls.querySelector("[data-carousel-prev]");
     var next = controls.querySelector("[data-carousel-next]");
     var track = controls.parentElement.querySelector("[data-carousel-track]");
     var index = 0;
+    var pages = 1;
+
+    // data-repeat="n" fills the track with n copies of its cards.
+    var repeat = Number(track.dataset.repeat) || 1;
+    var originals = Array.prototype.slice.call(track.children);
+    for (var r = 1; r < repeat; r++) {
+      originals.forEach(function (card) { track.appendChild(card.cloneNode(true)); });
+    }
+
+    function step() {
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      if (track.dataset.step === "page") return track.clientWidth + gap;
+      return track.firstElementChild.getBoundingClientRect().width + gap;
+    }
+
+    function measure() {
+      var max = track.scrollWidth - track.clientWidth;
+      pages = Math.max(1, Math.round(max / step()) + 1);
+      index = Math.min(index, pages - 1);
+    }
 
     function render() {
       pagination.innerHTML = "";
@@ -18,7 +37,6 @@
         if (i === index) {
           var active = document.createElement("span");
           active.className = "pagination__active";
-          active.setAttribute("aria-live", "polite");
           active.innerHTML =
             '<span class="pagination__current">' + (i + 1) + "</span>" +
             '<span class="pagination__total">/<span>' + pages + "</span></span>";
@@ -38,11 +56,7 @@
 
     function goTo(i) {
       index = Math.max(0, Math.min(pages - 1, i));
-      if (track && track.firstElementChild) {
-        var item = track.firstElementChild;
-        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-        track.scrollTo({ left: index * (item.getBoundingClientRect().width + gap), behavior: "smooth" });
-      }
+      track.scrollTo({ left: index * step(), behavior: "smooth" });
       render();
     }
 
@@ -53,10 +67,23 @@
       if (dot) goTo(Number(dot.dataset.index));
     });
 
+    // Keep the indicator in sync with swipes and trackpad scrolling.
+    var settle;
+    track.addEventListener("scroll", function () {
+      clearTimeout(settle);
+      settle = setTimeout(function () {
+        var i = Math.round(track.scrollLeft / step());
+        if (i !== index) { index = i; render(); }
+      }, 80);
+    }, { passive: true });
+
+    window.addEventListener("resize", function () { measure(); render(); });
+
+    measure();
     render();
   }
 
-  // Tabs: toggle the active state within each tablist.
+  // Tabs: toggle the active tab and show its panel.
   function initTabs(tablist) {
     var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
 
@@ -66,6 +93,8 @@
         t.classList.toggle("is-active", active);
         t.setAttribute("aria-selected", String(active));
         t.tabIndex = active ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !active;
       });
     }
 
@@ -73,11 +102,41 @@
       tab.tabIndex = tab.classList.contains("is-active") ? 0 : -1;
       tab.addEventListener("click", function () { select(tab); });
       tab.addEventListener("keydown", function (event) {
-        var step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
-        if (!step) return;
-        var target = tabs[(i + step + tabs.length) % tabs.length];
+        var dir = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+        if (!dir) return;
+        var target = tabs[(i + dir + tabs.length) % tabs.length];
         select(target);
         target.focus();
+      });
+    });
+  }
+
+  // Video boxes: play data-src when set; until real videos exist, say so.
+  function initVideos() {
+    document.querySelectorAll("[data-video]").forEach(function (box) {
+      var button = box.querySelector(".video-box__play");
+      if (!button) return;
+      button.addEventListener("click", function () {
+        var src = box.dataset.src;
+        if (src) {
+          var video = document.createElement("video");
+          video.src = src;
+          video.controls = true;
+          video.autoplay = true;
+          video.playsInline = true;
+          box.appendChild(video);
+          return;
+        }
+        var notice = box.querySelector(".video-box__notice");
+        if (!notice) {
+          notice = document.createElement("span");
+          notice.className = "video-box__notice";
+          notice.setAttribute("role", "status");
+          box.appendChild(notice);
+        }
+        notice.textContent = "Video coming soon";
+        clearTimeout(notice.timer);
+        notice.timer = setTimeout(function () { notice.remove(); }, 2500);
       });
     });
   }
@@ -131,5 +190,6 @@
   document.querySelectorAll("[data-carousel-controls]").forEach(initCarousel);
   document.querySelectorAll('[role="tablist"]').forEach(initTabs);
   initPortraits();
+  initVideos();
   initSearch();
 })();

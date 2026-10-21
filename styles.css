@@ -558,7 +558,25 @@ main > section,
   box-shadow: var(--shadow-float);
 }
 
-.promo__banner img {
+.promo__track {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.promo__track::-webkit-scrollbar {
+  display: none;
+}
+
+.promo__slide {
+  flex: 0 0 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.promo__slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1317,9 +1335,15 @@ main > section,
   display: flex;
   gap: var(--space-lg);
   width: 100%;
+  /* Room after the last story so every story can snap to the start. */
+  padding-right: max(0px, calc(100% - var(--story-width)));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+}
+
+.testimonials {
+  --story-width: 561px;
 }
 
 .story {
@@ -1393,6 +1417,10 @@ main > section,
   backdrop-filter: blur(10px);
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%);
   mask-image: linear-gradient(180deg, transparent, #000 40%);
+}
+
+.story__person .video-box__play {
+  top: 42%;
 }
 
 .story__name,
@@ -1691,6 +1719,171 @@ main > section,
   padding-right: 64px;
 }
 
+/* Themed icons (tools and undergraduate degrees)
+   ========================================================================== */
+
+.theme-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: #fdf0ec;
+}
+
+.theme-icon svg {
+  display: block;
+}
+
+.theme-icon--tool {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+}
+
+.theme-icon--tool svg {
+  width: 36px;
+  height: 36px;
+}
+
+.theme-icon--degree {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+}
+
+.theme-icon--degree svg {
+  width: 56px;
+  height: 56px;
+}
+
+/* Tab panels
+   ========================================================================== */
+
+.tab-panel {
+  width: 100%;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+.tab-panel:not([hidden]) {
+  animation: panel-in 0.25s ease;
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Video boxes (placeholder content until real videos are supplied)
+   ========================================================================== */
+
+.video-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-box video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+  z-index: 3;
+}
+
+.video-box__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-red-700);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+}
+
+.video-box__play svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+}
+
+.video-box__play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-box__play--lg {
+  width: 80px;
+  height: 80px;
+}
+
+.video-box__play--lg svg {
+  width: 32px;
+  height: 32px;
+}
+
+.video-box--placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-lg);
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgba(193, 53, 21, 0.55), transparent 60%),
+    linear-gradient(160deg, #13315c, var(--color-blue-900) 60%);
+  color: var(--color-white);
+  text-align: left;
+}
+
+.video-box__label {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.16);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.video-box__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: 0.24px;
+}
+
+.video-box__notice {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 2;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.3;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.video-box--placeholder .video-box__notice {
+  bottom: auto;
+  top: calc(50% + 56px);
+}
+
 /* Responsive
    ========================================================================== */
 
@@ -1910,6 +2103,10 @@ main > section,
 
   .comparison__cta {
     font-size: 18px;
+  }
+
+  .testimonials {
+    --story-width: 460px;
   }
 
   .story__quote {
