@@ -50,21 +50,27 @@
       </a>
 
       <nav class="main-nav" aria-label="Main">
-        <a class="main-nav__link" href="#programs">
-          <img class="main-nav__art main-nav__art--placeholder" src="assets/nav-explore-programs.png" width="32" height="32" alt="">
-          <span>Explore Programs</span>
-          <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
-        </a>
-        <a class="main-nav__link" href="#universities">
-          <img class="main-nav__art" src="assets/nav-top-university.png" width="32" height="31" alt="">
-          <span>Top University</span>
-          <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
-        </a>
-        <a class="main-nav__link" href="#tools">
-          <span class="main-nav__art main-nav__art--tools"><img src="assets/nav-tools.png" alt=""></span>
-          <span>Tools</span>
-          <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
-        </a>
+        <div class="nav-item" data-menu="menu-programs">
+          <button class="main-nav__link" type="button" aria-expanded="false" aria-controls="menu-programs">
+            <img class="main-nav__art main-nav__art--placeholder" src="assets/nav-explore-programs.png" width="32" height="32" alt="">
+            <span>Explore Programs</span>
+            <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
+          </button>
+        </div>
+        <div class="nav-item" data-menu="menu-universities">
+          <button class="main-nav__link" type="button" aria-expanded="false" aria-controls="menu-universities">
+            <img class="main-nav__art" src="assets/nav-top-university.png" width="32" height="31" alt="">
+            <span>Top University</span>
+            <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
+          </button>
+        </div>
+        <div class="nav-item" data-menu="menu-tools">
+          <button class="main-nav__link" type="button" aria-expanded="false" aria-controls="menu-tools">
+            <span class="main-nav__art main-nav__art--tools"><img src="assets/nav-tools.png" alt=""></span>
+            <span>Tools</span>
+            <img class="main-nav__caret" src="assets/nav-arrow-down.svg" width="14" height="14" alt="">
+          </button>
+        </div>
         <a class="main-nav__link" href="#compare">
           <img class="main-nav__art main-nav__art--contain" src="assets/nav-compare-programs.png" width="32" height="31" alt="">
           <span>Compare Programs</span>
@@ -78,8 +84,107 @@
           <img src="assets/icon-menu.svg" width="24" height="24" alt="">
         </button>
       </div>
+      <!-- Navigation mega menus (hover / click on the nav items above) -->
+      <div class="mega-menu mega-menu--programs" id="menu-programs" data-menu-panel>
+        <div class="mega-menu__col">
+          <p class="mega-menu__caption">Postgraduate</p>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-mba.png" width="24" height="24" alt=""><span>Master of Business Administration (MBA)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Master of Arts (MA)</span></a>
+          <a class="menu-item" href="#programs"><span class="menu-item__art menu-item__art--mca"><img src="assets/degree-mca.png" alt=""></span><span>Master of Computer Applications (MCA)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-mcom.png" width="24" height="24" alt=""><span>Master of Commerce (M.com)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Master of Science (M.Sc)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Master of Library and Information Science (MLIS)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Master of Social Work (MSW)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Post Graduate Diploma in Computer Applications (PGDCA)</span></a>
+        </div>
+        <div class="mega-menu__col mega-menu__col--ug">
+          <p class="mega-menu__caption">Undergraduate</p>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-mba.png" width="24" height="24" alt=""><span>Bachelor of Business Administration (BBA)</span></a>
+          <a class="menu-item" href="#programs"><span class="menu-item__art menu-item__art--mca"><img src="assets/degree-mca.png" alt=""></span><span>Bachelor of Computer Applications (BCA)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-mcom.png" width="24" height="24" alt=""><span>Bachelor of Commerce (B.com)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Bachelor of Arts (BA)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Bachelor of Library and Information Science (BLIS)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Bachelor of Education (B.Ed)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Bachelor of Science (B.Sc)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Bachelor of Social Work (BSW)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Bachelor of Tourism Studies (BTS)</span></a>
+          <a class="menu-item" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span>Bachelor of Tourism and Travel Management (BTTM)</span></a>
+        </div>
+      </div>
+
+      <div class="mega-menu mega-menu--universities" id="menu-universities" data-menu-panel>
+        <div class="uni-menu" data-uni-menu>
+          <div class="uni-menu__list">
+            <p class="mega-menu__caption">Top University</p>
+            <div class="uni-row" data-uni-row>
+              <a class="uni-row__main" href="#universities">
+                <span class="uni-row__badge"><img class="uni-row__logo" src="assets/uni-icon-dypatil.png" alt=""></span>
+                <span class="uni-row__name">D Y Patil University</span>
+              </a>
+              <a class="uni-row__learn" href="#universities">Learn about University <img src="assets/uni-learn-arrow.svg" width="12" height="12" alt=""></a>
+            </div>
+            <div class="uni-row" data-uni-row>
+              <a class="uni-row__main" href="#universities">
+                <span class="uni-row__badge"><img class="uni-row__logo uni-row__logo--crop" src="assets/uni-logo-chandigarh.png" alt=""></span>
+                <span class="uni-row__name">Chandigarh University</span>
+              </a>
+              <a class="uni-row__learn" href="#universities">Learn about University <img src="assets/uni-learn-arrow.svg" width="12" height="12" alt=""></a>
+            </div>
+            <div class="uni-row" data-uni-row>
+              <a class="uni-row__main" href="#universities">
+                <span class="uni-row__badge"><img class="uni-row__logo uni-row__logo--crop" src="assets/uni-logo-jindal.png" alt=""></span>
+                <span class="uni-row__name">O.P. Jindal Global University</span>
+              </a>
+              <a class="uni-row__learn" href="#universities">Learn about University <img src="assets/uni-learn-arrow.svg" width="12" height="12" alt=""></a>
+            </div>
+          </div>
+          <div class="uni-menu__programs" aria-label="Programs offered">
+            <div class="uni-menu__clip">
+            <div class="uni-menu__programs-inner">
+              <p class="mega-menu__caption">Programs Offered</p>
+                <a class="menu-item menu-item--program" href="#programs"><img class="menu-item__art" src="assets/degree-mba.png" width="24" height="24" alt=""><span><span class="menu-item__title">Master of Business Administration (MBA)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+                <a class="menu-item menu-item--program" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span><span class="menu-item__title">Master of Arts (MA)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+                <a class="menu-item menu-item--program" href="#programs"><span class="menu-item__art menu-item__art--mca"><img src="assets/degree-mca.png" alt=""></span><span><span class="menu-item__title">Master of Computer Applications (MCA)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+                <a class="menu-item menu-item--program" href="#programs"><img class="menu-item__art" src="assets/degree-mcom.png" width="24" height="24" alt=""><span><span class="menu-item__title">Master of Commerce (M.com)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+                <a class="menu-item menu-item--program" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span><span class="menu-item__title">Master of Science (M.Sc)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+                <a class="menu-item menu-item--program" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span><span class="menu-item__title">Master of Library and Information Science (MLIS)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+                <a class="menu-item menu-item--program" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span><span class="menu-item__title">Master of Social Work (MSW)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+                <a class="menu-item menu-item--program" href="#programs"><img class="menu-item__art" src="assets/degree-ma.png" width="24" height="24" alt=""><span><span class="menu-item__title">Post Graduate Diploma in Computer Applications (PGDCA)</span><span class="menu-item__meta">42+ Specialisation</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-menu mega-menu--tools" id="menu-tools" data-menu-panel>
+        <div class="mega-menu__col mega-menu__col--pre">
+          <p class="mega-menu__caption">Pre-admission Tools</p>
+          <a class="menu-item" href="#compare"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-compare"/></svg></span><span>Compare Universities</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-calculator"/></svg></span><span>Fee &amp; EMI Calculator</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-eligibility"/></svg></span><span>Eligibility Checker</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-scholarship"/></svg></span><span>Scholarship Finder</span></a>
+          <a class="menu-item" href="#book-session"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-headset"/></svg></span><span>Free Counselling Call</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-checklist"/></svg></span><span>Document Checklist</span></a>
+        </div>
+        <div class="mega-menu__col mega-menu__col--post">
+          <p class="mega-menu__caption">Post-admission Tools</p>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-briefcase"/></svg></span><span>Job Portal</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-badge"/></svg></span><span>Internship Portal</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-speaking"/></svg></span><span>English Speaking Practice</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-resume"/></svg></span><span>Create Resume</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-shield"/></svg></span><span>CV Assured</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-gift"/></svg></span><span>Refer &amp; Earn</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-resources"/></svg></span><span>Online Education Resources</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-network"/></svg></span><span>Networking Opportunities</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-support"/></svg></span><span>24x7 Assistance</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-notes"/></svg></span><span>Sample Papers &amp; Notes</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-linkedin"/></svg></span><span>LinkedIn Optimisation</span></a>
+          <a class="menu-item" href="#tools"><span class="menu-item__icon" aria-hidden="true"><svg><use href="#i-alumni"/></svg></span><span>Alumni Network</span></a>
+        </div>
+      </div>
     </div>
   </header>
+  <div class="nav-overlay" data-nav-overlay aria-hidden="true"></div>
 
   <main>
 

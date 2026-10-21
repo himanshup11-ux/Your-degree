@@ -1,4 +1,4 @@
-// YourDegree home page interactions: carousels, tabs, counsellor switcher, videos, search.
+// YourDegree home page interactions: carousels, tabs, counsellor switcher, videos, nav menus, smooth scroll, search.
 (function () {
   "use strict";
 
@@ -171,6 +171,162 @@
     if (next) next.addEventListener("click", function () { shift(-1); });
   }
 
+  // Navigation mega menus: open on hover (or click/keyboard), blur the page behind.
+  function initMegaMenus() {
+    var header = document.querySelector(".site-header");
+    var overlay = document.querySelector("[data-nav-overlay]");
+    var items = Array.prototype.slice.call(document.querySelectorAll(".nav-item[data-menu]"));
+    if (!header || !items.length) return;
+    var current = null;
+    var closeTimer;
+
+    function panelFor(item) {
+      return document.getElementById(item.dataset.menu);
+    }
+
+    function open(item) {
+      clearTimeout(closeTimer);
+      if (current === item) return;
+      if (current) close(true);
+      current = item;
+      item.classList.add("is-open");
+      item.querySelector("button").setAttribute("aria-expanded", "true");
+      panelFor(item).classList.add("is-open");
+      header.classList.add("is-menu-open");
+      overlay.classList.add("is-visible");
+    }
+
+    function close(switching) {
+      if (!current) return;
+      var item = current;
+      current = null;
+      item.classList.remove("is-open");
+      item.querySelector("button").setAttribute("aria-expanded", "false");
+      var panel = panelFor(item);
+      panel.classList.remove("is-open");
+      var uni = panel.querySelector("[data-uni-menu]");
+      if (uni) resetUniversities(uni);
+      if (!switching) {
+        header.classList.remove("is-menu-open");
+        overlay.classList.remove("is-visible");
+      }
+    }
+
+    function scheduleClose() {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () { close(false); }, 160);
+    }
+
+    items.forEach(function (item) {
+      var button = item.querySelector("button");
+      var panel = panelFor(item);
+      item.addEventListener("mouseenter", function () { open(item); });
+      item.addEventListener("mouseleave", scheduleClose);
+      panel.addEventListener("mouseenter", function () { clearTimeout(closeTimer); });
+      panel.addEventListener("mouseleave", scheduleClose);
+      button.addEventListener("click", function () {
+        if (current === item) close(false); else open(item);
+      });
+      // Close after following a link inside the menu.
+      panel.addEventListener("click", function (event) {
+        if (event.target.closest("a")) close(false);
+      });
+    });
+
+    overlay.addEventListener("click", function () { close(false); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && current) {
+        var button = current.querySelector("button");
+        close(false);
+        button.focus();
+      }
+    });
+    document.addEventListener("focusin", function (event) {
+      if (current && !current.contains(event.target) && !panelFor(current).contains(event.target)) close(false);
+    });
+  }
+
+  // Top University menu: hovering a university expands its programs block.
+  function resetUniversities(menu) {
+    menu.classList.remove("is-expanded");
+    menu.querySelectorAll("[data-uni-row]").forEach(function (row) { row.classList.remove("is-active"); });
+  }
+
+  function initUniversityMenu() {
+    var menu = document.querySelector("[data-uni-menu]");
+    if (!menu) return;
+    var rows = Array.prototype.slice.call(menu.querySelectorAll("[data-uni-row]"));
+    rows.forEach(function (row) {
+      function activate() {
+        rows.forEach(function (r) { r.classList.toggle("is-active", r === row); });
+        menu.classList.add("is-expanded");
+      }
+      row.addEventListener("mouseenter", activate);
+      row.addEventListener("focusin", activate);
+    });
+  }
+
+  // Smooth, eased wheel scrolling for the whole page. Off for reduced-motion
+  // users and touch input (wheel events only); horizontal wheels pass through.
+  function initSmoothScroll() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var root = document.documentElement;
+    root.classList.add("has-smooth-scroll");
+    var target = window.scrollY;
+    var current = window.scrollY;
+    var running = false;
+
+    function maxScroll() {
+      return root.scrollHeight - window.innerHeight;
+    }
+
+    function frame() {
+      current += (target - current) * 0.1;
+      if (Math.abs(target - current) < 0.5) current = target;
+      window.scrollTo({ top: current, behavior: "instant" });
+      if (current !== target) {
+        requestAnimationFrame(frame);
+      } else {
+        running = false;
+      }
+    }
+
+    function start() {
+      if (!running) {
+        running = true;
+        requestAnimationFrame(frame);
+      }
+    }
+
+    window.addEventListener("wheel", function (event) {
+      if (event.ctrlKey || event.defaultPrevented) return;
+      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+      event.preventDefault();
+      var delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1);
+      if (!running) target = current = window.scrollY;
+      target = Math.max(0, Math.min(maxScroll(), target + delta));
+      start();
+    }, { passive: false });
+
+    // Keyboard, scrollbar and programmatic scrolls move the page directly.
+    window.addEventListener("scroll", function () {
+      if (!running) target = current = window.scrollY;
+    }, { passive: true });
+
+    // In-page links glide to their section.
+    document.addEventListener("click", function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (!link || link.getAttribute("href").length < 2) return;
+      var section = document.getElementById(link.getAttribute("href").slice(1));
+      if (!section) return;
+      event.preventDefault();
+      if (!running) current = window.scrollY;
+      target = Math.max(0, Math.min(maxScroll(), section.getBoundingClientRect().top + window.scrollY));
+      history.pushState(null, "", link.getAttribute("href"));
+      start();
+    });
+  }
+
   // Search: jump to the programs section with the chosen filters in the URL.
   function initSearch() {
     var form = document.querySelector(".search-pill");
@@ -191,5 +347,8 @@
   document.querySelectorAll('[role="tablist"]').forEach(initTabs);
   initPortraits();
   initVideos();
+  initMegaMenus();
+  initUniversityMenu();
+  initSmoothScroll();
   initSearch();
 })();
